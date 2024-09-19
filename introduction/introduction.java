@@ -34,25 +34,37 @@ public class introduction {
         String strToReverse="sharan";
         int len=strToReverse.length()-1;
         while( len >= 0){
-            System.out.print(str.charAt(len));
+            System.out.print(strToReverse.charAt(len));
             len--;
         }
 
         // break and continue
-//skip the vowels and break when encountering special charcters
+//skip the vowels and break when encountering comma
 
-        String str= "Sharan";
+        String str= "sharan";
         int i = 0;
         char[] vowels = {'a','e','i','o','u' };
-        while ( i < str.length() ){
+        while (i < str.length()) {
+            char currentChar = str.charAt(i);
+            boolean isVowel = false;
+             for (char vowel : vowels) {
+                if (currentChar == vowel) {
+                    isVowel = true;
+                    break;
+                }
+            }
+            if (isVowel) {
+                i++;
+                continue;
+            }
 
-            if( str.charAt(i). ){}
+            if (currentChar == ',') {
+                break;
+            }
 
+            System.out.println("Consonant: " + currentChar);
             i++;
-
         }
-
-
 
 
 
