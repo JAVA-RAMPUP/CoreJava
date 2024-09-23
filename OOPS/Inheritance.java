@@ -75,7 +75,7 @@ public class Inheritance {
         sharan.displayDetails();
         Danish.displayDetails();
         manager.displayDetails();
-        System.out.println(companyName);
+        System.out.println(Employee.companyName);
 
         System.out.println(sharan.companyName);
 
