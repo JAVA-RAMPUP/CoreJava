@@ -26,9 +26,9 @@ class  FullTimeEmployee extends Employee {
         this.salary=salary;
     }
 
-
+@Override
     public void displayDetails() {
-        super.displayDetails();
+       // super.displayDetails();
         System.out.println(" Salary: " + salary);
     }
 
@@ -61,6 +61,8 @@ class Manager extends FullTimeEmployee{
     @Override
     public void displayDetails() {
         super.displayDetails();
+        System.out.println(" Salary: " + salary);
+
     }
 }
 
@@ -71,13 +73,12 @@ public class Inheritance {
     public static void main(String[] args) {
         FullTimeEmployee sharan = new FullTimeEmployee("Sharan",50000,1);
         PartTimeEmployee Danish = new PartTimeEmployee("Danish",25000,5);
-        Manager manager = new Manager("Manager",90000,1);
+//        Manager manager = new Manager("Manager",90000,1);
+//        sharan.displayDetails();
+//        Danish.displayDetails();
+//        manager.displayDetails();
+//        System.out.println(Employee.companyName);
         sharan.displayDetails();
-        Danish.displayDetails();
-        manager.displayDetails();
-        System.out.println(Employee.companyName);
-
-        System.out.println(sharan.companyName);
 
 
     }

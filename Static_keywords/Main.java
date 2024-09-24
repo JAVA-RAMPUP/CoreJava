@@ -1,40 +1,88 @@
 package Static_keywords;
 
 
-class Employee{
 
-    static String ceo="Musk";
-    static  int num ;
+// Final class
+final class CompanyInfo {
+    private static final String companyName = "CEI";
+    private static final String location = "Chennai";
 
-    static {
-num = 10/0;
+    public static String getCompanyName() {
+        return companyName;
     }
 
+    public static String getLocation() {
+        return location;
+    }
 }
 
 
+class Employee{
 
+    static String ceo="Musk";// method area
+
+    static  int count=0 ;
+
+    String name="sharan"; //heap area
+
+    static {
+        count++;
+    }
+
+    public static void showCeo(){
+        System.out.println(ceo);
+    }
+
+    //cannot be override by subclasses
+    public final void showEmployeePolicies(){
+        System.out.println( "Employee Policies are ......"  );
+    }
+
+
+}
 
 public class Main {
 
-    void dcd(){
-
-        Employee.ceo="cd";
-         System.out.println(" ceo: " + Employee.ceo);
-    }
 
     public static void main(String[] args) {
 
-//        Employee.ceo="sharan";
-       // System.out.println("dwd");
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("Argument " + i + ": " + args[i]);
+        }
 
-//        System.out.println(10/0);
+
+
+
+
+        Employee empOne = new Employee();
+
+       // System.out.println( empOne.name);
+        empOne.name= "desing";
+
+        Employee empTwo = new Employee();
+
+        Employee.ceo = "Elon";
+
+        System.out.println( "CEO" +Employee.ceo);
+
+        System.out.println(empOne.ceo );
+
+        System.out.println( empTwo.name);
+
+
+
+
+
+
+//        Sharan.name="Sharan";
+//
+//        Employee.ceo="sharan";
+//
 //        System.out.println(Employee.ceo);
-//        Main n= new Main();
-//        n.dcd();
-        System.out.println(Employee.num);
-//        System.out.println(" ceo: " + Employee.ceo);
-//       // Employee.main(new String[]{"c"});
+//
+//        System.out.println(Employee.count);
+//
+//        Employee.showCeo();
 
     }
 }
