@@ -2,31 +2,62 @@ package Collections.ArrayList;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Collections;
 
 
 public class Main {
 
 
-    public static void main(String[] args) {
-        ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("Apple");
-        arrayList.add("Banana");
-        arrayList.add("Cherry");
+    public static void main(String[] args) throws InterruptedException {
+        ArrayList<String> fruits = new ArrayList<>();
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+//        fruits.add("Orange");
+//        fruits.add("Banana");
+//        fruits.add("Cherry");
+//
+//       // fruits.add(4,"Mango");
+//        fruits.add(2,"Apple");
+//fruits.remove("Cherry");
+//
+//        Collections.sort(fruits);
+//
+//
+//        Iterator<String> it=fruits.iterator();
+//
+//         while(it.hasNext()){
+//             System.out.println(it.next());
+//         }
+//
+//
+//
+//        System.out.println("First element: " + fruits.get(0));
+//
+//        for (String fruit : fruits) {
+//            System.out.println(fruit);
+//        }
+//
+//        System.out.println("Size: "+fruits.size());
 
-         Iterator<String> it=arrayList.iterator();
 
-         while(it.hasNext()){
-             System.out.println(it.next());
-         }
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                arrayList.add(i);
+            }
+        });
 
-         arrayList.stream().sorted();
+        Thread t2 = new Thread(() -> {
+            for (int i = 1000; i < 2500; i++) {
+                arrayList.add(i);
+            }
+        });
 
+       // t1.start();
+        t2.start();
 
-        System.out.println("First element: " + arrayList.get(0));
+        //t1.join();
+        t2.join();
 
-        for (String fruit : arrayList) {
-            System.out.println(fruit);
-        }
+        System.out.println("ArrayList size: " + arrayList.size());
 
 
     }
