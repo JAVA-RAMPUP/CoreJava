@@ -4,27 +4,24 @@ import java.util.PriorityQueue;
 
 import java.util.Comparator;
 
-class MyComparator implements Comparator<String>
-{
+
+class MyComparator implements Comparator<Integer> {
     @Override
-    public int compare(String x, String y)
-    {
-        System.out.println("Comparing " + x + " and " + y);
-        return x.length() - y.length();
+    public int compare(Integer o1, Integer o2) {
+        // Reverse order
+        return o2 - o1;
     }
 }
-
 
 public class Main
 {
     public static void main(String[] args)
     {
 
-        PriorityQueue<String> queue = new PriorityQueue<String>(15, new MyComparator());
-        queue.add("Tyrion Lannister");
-    //    queue.add("Daenerys Targaryen");
-        queue.add("Arya Stark");
-        queue.add("Petyr 'Littlefinger' Baelish");
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer>( new MyComparator());
+        queue.add(2);
+        queue.add(5);
+        queue.add(9);
 
         while (!queue.isEmpty())
         {

@@ -10,7 +10,6 @@ class UserDefinedException extends Exception
 
 public class Main {
 
-
     public static void main(String[] args) throws UserDefinedException {
 
         try{
