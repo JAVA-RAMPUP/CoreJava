@@ -3,6 +3,7 @@ package Collections.ArrayList;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Collections;
+import java.util.stream.Stream;
 
 
 public class Main {
@@ -12,15 +13,27 @@ public class Main {
         ArrayList<String> fruits = new ArrayList<>();
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         fruits.add("Orange");
+        fruits.add("Apple");
         fruits.add("Banana");
         fruits.add("Cherry");
+
+
+        boolean a= fruits.stream().anyMatch( fruit -> fruit.startsWith("B") );
+        System.out.println(a);
+
+        fruits.stream().filter(f -> f.endsWith("e")).forEach( f->System.out.println(f));
+        //System.out.println(s);
+        System.out.println(fruits.stream());
+
+
+
 
        // fruits.add(4,"Mango");
         fruits.add(2,"Apple");
 //fruits.remove("Cherry");
 
         Collections.sort(fruits);
-        System.out.println(fruits);
+      //  System.out.println(fruits);
 
 //        Iterator<String> it=fruits.iterator();
 //

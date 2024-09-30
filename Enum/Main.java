@@ -3,17 +3,30 @@ package Enum;
 
 enum Membership {
 
-    Free( 8),
-    Basic (7),
-    Pro(2);
+    Free(5, 8),
+    Basic (12,7),
+    Pro(24,2);
 
-    private final int monthsValidity;
+    private final int tier;
+    private  final int monthsValidity;
+
 
     // Constructor to initialize the field
     Membership(int tier,int monthsValidity) {
+        this.tier = tier;
         this.monthsValidity = monthsValidity;
-        this.tier= tier;
     }
+
+    public int getTier() {
+        return tier;
+    }
+
+    public int getMonthsValidity() {
+        return monthsValidity;
+    }
+
+
+
 }
 
 public class Main {
@@ -22,7 +35,7 @@ public class Main {
     enum Level {
         LOW(1), MEDIUM(2), HIGH(3);
 
-        private int levelCode;
+        private final int levelCode;
 
         // Constructor
         Level(int levelCode) {
@@ -36,16 +49,22 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // Accessing enum constants and methods
-        Level currentLevel = Level.MEDIUM;
+//        // Accessing enum constants and methods
+//        Level currentLevel = Level.MEDIUM;
+//
+//        System.out.println("Current Level: " + currentLevel);
+//        System.out.println("Level Code: " + currentLevel.getLevelCode());
+//
+//        // Iterate through the enum values
+//        for (Level level : Level.values()) {
+//            System.out.println("Level: " + level + ", Code: " + level.getLevelCode());
+//        }
 
-        System.out.println("Current Level: " + currentLevel);
-        System.out.println("Level Code: " + currentLevel.getLevelCode());
 
-        // Iterate through the enum values
-        for (Level level : Level.values()) {
-            System.out.println("Level: " + level + ", Code: " + level.getLevelCode());
-        }
+        Membership m = Membership.Basic;
+       System.out.println(m.getMonthsValidity());
+
+
     }
 }
 
