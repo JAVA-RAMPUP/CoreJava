@@ -5,20 +5,26 @@ class UserDefinedException extends Exception
     public UserDefinedException(String str)
     {
         super(str);
+        System.out.println("custom exception"  + str);
     }
+
+
 }
 
 public class Main {
 
-    public static void main(String[] args) throws UserDefinedException {
+    public static void main(String[] args)  {
 
         try{
 
-             int a =10/0;
+         //    int a =10/0;
+            throw new UserDefinedException("c");
+
         }
-        catch (ArithmeticException e){
-            System.out.println("handled");
-           // throw new UserDefinedException("c");
+        catch (UserDefinedException e){
+
+            System.out.println(e.getMessage());
+            //System.out.println("handled");
         }
 finally {
             System.out.println("finally");

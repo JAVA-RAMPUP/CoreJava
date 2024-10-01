@@ -6,6 +6,11 @@ class MyException extends Exception {
         super();
         System.out.println("MyException");
     }
+
+    @Override
+    public String getMessage() {
+        return "Custom Message";
+    }
 }
 
 
@@ -16,7 +21,7 @@ class Employee {
 
 public class Main {
 
-    public static void main(String[] args) throws MyException{
+    public static void main(String[] args) {
 
 //        try{
 //            int a= 10/0;

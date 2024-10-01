@@ -20,6 +20,7 @@ interface FuncInterface {
 class Example{
 
     Example(){
+
         System.out.println("From class Example-Constructor");
     }
 
@@ -32,14 +33,13 @@ public class Main {
 
 
     public void showImplementation(){
+
         System.out.println("Instance Method");
     }
 
     public static void main(String[] args) {
 
-
         Main m = new Main();
-
 
         FuncInterface f1 = () ->{
             System.out.println("Implementing via Lambda");
@@ -55,7 +55,6 @@ public class Main {
         FuncInterface f3 =Example::new;
 
         f3.show();
-
 
         // static
 
