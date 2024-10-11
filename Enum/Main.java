@@ -29,6 +29,9 @@ enum Membership {
 
 }
 
+
+
+
 public class Main {
 
     // Defining an enum with fields, methods, and constructor
