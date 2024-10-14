@@ -64,6 +64,7 @@ public class Main {
         Stream<Employee> empFilteredStream= arrEmployee.stream().filter(emp -> { return emp.age >= 18;}) ;
 
 
+
         List<Employee> empFilteredList= arrEmployee.stream().filter(emp -> { return emp.age >= 18;}).toList();
 
 

@@ -39,31 +39,31 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Main m = new Main();
-
-        FuncInterface f1 = () ->{
-            System.out.println("Implementing via Lambda");
-        };
-
-        // instance method
-        FuncInterface f2 = m::showImplementation;
-
-        f1.show();
-        f2.show();
+//        Main m = new Main();
+//
+//        FuncInterface f1 = () ->{
+//            System.out.println("Implementing via Lambda");
+//        };
+//
+//        // instance method
+//        FuncInterface f2 = m::showImplementation;
+//
+//        f1.show();
+//        f2.show();
 
         // constructor
         FuncInterface f3 =Example::new;
 
-        f3.show();
+       f3.show();
 
         // static
 
-        BiFunction< Integer, Integer, Integer> f4 = Example::add;
-       int result =f4.apply(1, 2);
-        System.out.println(result);
-
-        IntBinaryOperator sum = (a, b) -> a + b;
-        System.out.println(  sum.applyAsInt(1, 9));
+//        BiFunction< Integer, Integer, Integer> f4 = Example::add;
+//       int result =f4.apply(1, 2);
+//        System.out.println(result);
+//
+//        IntBinaryOperator sum = (a, b) -> a + b;
+//        System.out.println(  sum.applyAsInt(1, 9));
 
     }
 }

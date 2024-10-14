@@ -19,9 +19,16 @@ class General<T>{
     T a;
     T b;
 
-    public  T  void add(T a,T b){
-        return a+b;
+    public T add(T d){
+        System.out.println(d);
+        return d;
     }
+
+    public  <S,U> int sum( U a){
+        return 1;
+    }
+
+
 
 }
 
@@ -42,7 +49,17 @@ public class Main {
 
         Main obj = new Main();
        obj.display();
+
+     //  sample sample = new sample();
+
+        System.out.println("ran"+sample.RandomNum);
+        System.out.println("ran"+sample.RandomNum);
+
+
        // System.out.println(Main.a);
+
+        double a=10;
+        int as= (int)a;
 
     }
 

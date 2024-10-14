@@ -22,7 +22,7 @@ public class Main {
 //         FunctionalInterface fi = new FunctionalInterface() {
 //
 //            public int show(int num) {
-//                 System.out.println("Implemented via lambda" + "and num is"+num);
+//                 System.out.println("Implemented via anonymous function" + "and num is"+num);
 //                return num;
 //            }
 //
@@ -31,6 +31,8 @@ public class Main {
 //             }
 //
 //         };
+
+        FunctionalInterface fi5 =(num)->{return num;};
 
 
 
